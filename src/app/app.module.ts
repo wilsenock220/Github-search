@@ -9,9 +9,8 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
-import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AboutComponent } from './about/about.component';
+
 
 
 @NgModule({
@@ -20,9 +19,7 @@ import { AboutComponent } from './about/about.component';
     SidebarComponent,
     UsersComponent,
     PostsComponent,
-    DetailsComponent,
-    AboutComponent
-
+   
   ],
   imports: [
     BrowserModule,

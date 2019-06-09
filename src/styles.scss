@@ -1,10 +1,14 @@
 
 body {
   margin: 0;
-  background: #f48fb1;
+  // background: #f48fb1;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
-  background-color: #cfd8dc;
+  background-color: #bbdefb;
+  color: black;
+  background-image: url(https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  // background-repeat: no-repeat;
 }
 
 #container {
@@ -20,10 +24,8 @@ body {
          margin:0;padding:0;
 
          li {
-             background: #fff;
-             border-radius: 8px;
-             padding: 20px;
-             margin-bottom: 8px;
+             background: transparent;
+            
 
              a {
                  font-size: 1.5em;

@@ -1,85 +1,93 @@
+<h1 class="head">
+  GITHUB  SEARCH
+</h1>
 <div class="flex">
- <!--Modal: Login with Avatar Form-->
-<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
-  <!--Content-->
-  <div class="modal-content">
+  <div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <h1 class="user">Search User</h1>
+  
+    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
 
-    <!--Header-->
-    <div class="modal-header">
-      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar" class="rounded-circle img-responsive">
+      <div class="modal-content">
+
+
+        <div class="modal-header">
+          <img src="https://raw.githubusercontent.com/jasoncostello/code-slayer/master/codeslayer_2560x1440.png" alt="avatar"
+            class="rounded-circle img-responsive">
+        </div>
+
+        <div class="modal-body text-center mb-1">
+
+
+
+          <div class="text-center mt-4"></div>
+
+          <form class="form-inline md-form form-sm mt-0" id="form">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search user via username"  [(ngModel)]="username"
+              name="username" (keyup)="findUser()">
+            </form>
+
+
+        </div>
+
+      </div>
     </div>
-    <!--Body-->
-    <div class="modal-body text-center mb-1">
-
-
-
-      <div class="text-center mt-4"></div>
-      
-      <form action="" class="search-form">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search user by username" [(ngModel)]="username" name="username" (keyup)="findUser()">
-          </div>
-        </form>
-
-    </div>
-
   </div>
-  <!--/.Content-->
-</div>
-</div>
 
 
 
 
-  <div  class="right">
-      <h1>Users</h1>
-
-      <ul class="left">
-          <li *ngIf="user">
-            <a routerLink="/details/{{user.id}}">{{user.name}} <small>({{user.login}})</small><span *ngIf="user.company">
-                Works
-                at {{user.company}}</span></a>
-          </li>
-
-          <li>
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="avatar" height="120px;">
+  <div class="right">
+    <h1>Users</h1>
+    <div  class="left">
+        <ul>
+            <li *ngIf="user">
+              <a routerLink="/details/{{user.id}}">{{user.name}} <small>({{user.login}})</small><span *ngIf="user.company">
+                  Works
+                  at {{user.company}}</span></a>
+            </li>
+      
+            <li>
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="avatar" height="120px;">
+                </div>
+      
+                <span class="space">
+                  <p>
+                    <span>{{user.followers}} Follower(s)</span>
+                  </p>
+                  <p><span>gists {{user.public_gists}} </span></p>
+      
+                  <p><span>Following {{user.following}}</span></p>
+                  <p>
+                    <span>repos {{user.public_repos}}</span>
+                  </p>
+                </span>
+                <button class="btn btn-success"><a href="{{user.html_url}}" target="_blank"> View Github profile </a></button>
+                <div>
+                  <div class="card-header">
+                    <h3>
+                      Repositories
+                    </h3>
+                  </div>
+      
+                  <div class="card-body" *ngFor="let repo of repos">
+                    <h3 style="padding: 20px">
+                      {{repo.name}} <a href="{{repo.html_url}}" target="_blank" style="font-size: 10px">View project</a>
+                      <h4>{{repo.description}}</h4>
+      
+                    </h3>
+      
+                  </div>
+                </div>
               </div>
-
-              <span class="space">
-                <p>
-                  <span class="label label-success">{{user.followers}} Follower(s)</span>
-                </p>
-                <p><span class="col-lg-4">gists {{user.public_gists}} </span></p>
-
-                <p><span class="col-lg-4">Following {{user.following}}</span></p>
-                <p>
-                  <span class="col-lg-4">repos {{user.public_repos}}</span>
-                </p>
-              </span>
-              <button class="btn btn-success"><a href="{{user.html_url}}" target="_blank"> View Github profile </a></button>
-               <div>
-                 <div class="card-header">
-                   <h3>
-                     Repositories
-                   </h3>
-                 </div>
-
-                 <div class="card-body" *ngFor="let repo of repos">
-                   <h3 style="padding: 20px">
-                     {{repo.name}} <a href="{{repo.html_url}}" target="_blank" style="font-size: 10px">View project</a> <h4>{{repo.description}}</h4>
-
-                   </h3>
-
-                 </div>
-               </div>
-            </div>
-          </li>
-        </ul>
-
+            </li>
+          </ul>
+      
+    </div>
+  
   </div>
 
 </div>
